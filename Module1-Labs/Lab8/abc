@@ -1,0 +1,32 @@
+Creating and Starting Threads
+
+Creating a thread in Java is done like this:
+
+  Thread thread = new Thread();
+
+To start the Java thread you will call its start() method, like this:
+
+  thread.start();
+
+This example doesn't specify any code for the thread to execute. The thread will stop again right away after it is started.
+
+There are two ways to specify what code the thread should execute. The first is to create a subclass of Thread and override the run() method. The second method is to pass an object that implements Runnable (java.lang.Runnable to the Thread constructor. Both methods are covered below.
+Thread Subclass
+
+The first way to specify what code a thread is to run, is to create a subclass of Thread and override the run() method. The run() method is what is executed by the thread after you call start(). Here is an example of creating a Java Thread subclass:
+
+  public class MyThread extends Thread {
+
+    public void run(){
+       System.out.println("MyThread running");
+    }
+  }
+
+To create and start the above thread you can do like this:
+
+  MyThread myThread = new MyThread();
+  myTread.start();
+
+The start() call will return as soon as the thread is started. It will not wait until the run() method is done. The run() method will execute as if executed by a different CPU. When the run() method executes it will print out the text "MyThread running".
+
+You can also create an anonymous subclass of Thread like this: 

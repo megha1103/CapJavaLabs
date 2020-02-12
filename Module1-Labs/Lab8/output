@@ -1,0 +1,13 @@
+Creating and Starting Threads
+
+Creating a thread in Java is done like this:
+
+  Thread thread = new Thread();
+
+To start the Java thread you will call its start() method, like this:
+
+  thread.start();
+
+This example doesn't specify any code for the thread to execute. The thread will stop again right away after it is started.
+
+There are two ways to specify what code the thread should execu
